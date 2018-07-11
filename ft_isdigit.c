@@ -6,7 +6,7 @@
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 20:19:29 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/09 20:23:10 by pthorell         ###   ########.fr       */
+/*   Updated: 2018/07/10 22:41:37 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int	ft_isdigit(int c)
 {
-	unsigned char u_char;
-
-	u_char = M_UCHAR(c);
 	if (c >= '0' && c <= '9')
 		return (1);
 	else

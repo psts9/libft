@@ -6,7 +6,7 @@
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 20:06:56 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/09 20:19:21 by pthorell         ###   ########.fr       */
+/*   Updated: 2018/07/10 22:41:18 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int	ft_isalpha(int c)
 {
-	unsigned char u_char;
-
-	u_char = M_UCHAR(c);
 	if (c >= 'A' && c <= 'Z')
 		return (1);
 	if (c >= 'a' && c <= 'z')

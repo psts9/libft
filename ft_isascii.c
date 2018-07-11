@@ -6,7 +6,7 @@
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 20:31:53 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/09 21:08:32 by pthorell         ###   ########.fr       */
+/*   Updated: 2018/07/10 22:42:01 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_isascii(int c)
 {
-	unsigned char u_char;
-
-	u_char = M_UCHAR(c);
-	if (u_char >= 0 && u_char <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

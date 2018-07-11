@@ -6,7 +6,7 @@
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 20:51:28 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/09 20:55:51 by pthorell         ###   ########.fr       */
+/*   Updated: 2018/07/10 22:45:13 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	unsigned char u_char;
-
-	u_char = M_UCHAR(c);
-	if (u_char >= 'A' && u_char <= 'Z')
-		u_char += 32;
-	return (u_char);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }

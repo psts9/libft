@@ -6,7 +6,7 @@
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 20:35:19 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/09 20:41:09 by pthorell         ###   ########.fr       */
+/*   Updated: 2018/07/10 22:43:40 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_isprint(int c)
 {
-	unsigned char u_char;
-
-	u_char = M_UCHAR(c);
-	if (c >= 40 && c <= 176)
+	if (c >= 32 && c <= 126)
 		return (1);
 	else
 		return (0);
