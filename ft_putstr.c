@@ -6,7 +6,7 @@
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 16:41:10 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/10 16:43:36 by pthorell         ###   ########.fr       */
+/*   Updated: 2018/07/11 15:18:08 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr(char const *s)
 	int i;
 
 	i = 0;
+	if (!s)
+		return ;
 	while (s[i])
 		ft_putchar(s[i++]);
 }

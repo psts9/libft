@@ -6,7 +6,7 @@
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 15:50:58 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/10 16:40:16 by pthorell         ###   ########.fr       */
+/*   Updated: 2018/07/11 15:06:59 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,15 @@ static void	nlz(char **result, int *n)
 	(*n) *= -1;
 }
 
+static char	*set_to_intmin(void)
+{
+	char *p;
+
+	p = ft_strnew(11);
+	p = ft_strcpy(p, "-2147483648");
+	return (p);
+}
+
 char		*ft_itoa(int n)
 {
 	int		i;
@@ -44,7 +53,7 @@ char		*ft_itoa(int n)
 
 	if (n == -2147483648)
 	{
-		result = "-2147483648";
+		result = set_to_intmin();
 		return (result);
 	}
 	i_size = numlen(n);
