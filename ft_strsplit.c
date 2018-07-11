@@ -6,7 +6,7 @@
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 14:31:17 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/11 15:09:43 by pthorell         ###   ########.fr       */
+/*   Updated: 2018/07/11 16:19:35 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,12 @@ static void	set_to_zero(int *a, int *b)
 	*b = 0;
 }
 
+static void	skip_to_valid(char const *s, char c, int *i)
+{
+	while (s[*i] == c && s[*i])
+		++(*i);
+}
+
 char		**ft_strsplit(char const *s, char c)
 {
 	char	**result;
@@ -57,23 +63,23 @@ char		**ft_strsplit(char const *s, char c)
 	int		i;
 	int		x;
 
+	if (!s)
+		return (NULL);
 	result = (char**)malloc(sizeof(char*) * (ft_strnumsplit(s, c) + 1));
-	if (!s || !result)
+	if (!result)
 		return (NULL);
 	set_to_zero(&i, &x);
 	while (s[i])
 	{
-		while (s[i] == c && s[i])
-			++i;
-		if (s[i])
-		{
-			istrlen = ft_strtil(s + i, c);
-			result[x] = ft_strnew(istrlen);
-			if (!result[x])
-				return (NULL);
-			ft_strncpy(result[x++], s + i, istrlen);
-			i += ft_strtil(s + i, c);
-		}
+		skip_to_valid(s, c, &i);
+		if (!s[i])
+			break ;
+		istrlen = ft_strtil(s + i, c);
+		result[x] = ft_strnew(istrlen);
+		if (!result[x])
+			return (NULL);
+		ft_strncpy(result[x++], s + i, istrlen);
+		i += ft_strtil(s + i, c);
 	}
 	result[x] = NULL;
 	return (result);

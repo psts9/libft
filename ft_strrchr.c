@@ -6,7 +6,7 @@
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 18:56:36 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/09 21:05:42 by pthorell         ###   ########.fr       */
+/*   Updated: 2018/07/11 15:46:52 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	unsigned char	u_char;
 	int				i;
 
-	u_char = M_UCHAR(c);
+	u_char = (unsigned int)c;
 	i = ft_strlen(s);
 	while (i >= 0)
 	{

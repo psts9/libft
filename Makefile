@@ -6,7 +6,7 @@
 #    By: pthorell <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/10 17:22:27 by pthorell          #+#    #+#              #
-#    Updated: 2018/07/10 18:56:48 by pthorell         ###   ########.fr        #
+#    Updated: 2018/07/11 16:23:00 by pthorell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ $(NAME): build
 
 build:
 	gcc -c *.c
-	ar -rc libft.a *.o
+	ar -rc $(NAME).a *.o
 
 clean:
 	/bin/rm -rf *.o
