@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strsub.c                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/09 23:16:13 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/10 23:14:47 by pthorell         ###   ########.fr       */
+/*   Created: 2018/07/10 23:53:56 by pthorell          #+#    #+#             */
+/*   Updated: 2018/07/11 00:35:31 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+int	main(void)
 {
-	size_t	i;
-	char	*p;
+	char *string = "split  ||this|for|me|||||!|";
+	char **result = ft_strsplit(string, '|');
 
-	p = ft_strnew(len);
-	if (!p || !s)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		p[i] = s[start + i];
-		++i;
-	}
-	p[i] = '\0';
-	return (p);
+	int i = 0;
+	while (result[i])
+		ft_putendl(result[i++]);
+	return (0);
 }

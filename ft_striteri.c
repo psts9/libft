@@ -6,18 +6,21 @@
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 22:45:30 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/10 18:36:17 by pthorell         ###   ########.fr       */
+/*   Updated: 2018/07/10 22:59:58 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int i;
-
-	i = 0;
-	while (s[i])
+	if (s && f)
 	{
-		f(i, &(s[i]));
-		++i;
+		int i;
+
+		i = 0;
+		while (s[i])
+		{
+			f(i, &(s[i]));
+			++i;
+		}
 	}
 }
