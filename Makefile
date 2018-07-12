@@ -6,30 +6,26 @@
 #    By: pthorell <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/10 17:22:27 by pthorell          #+#    #+#              #
-#    Updated: 2018/07/11 16:23:00 by pthorell         ###   ########.fr        #
+#    Updated: 2018/07/12 00:13:40 by pthorell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft
+NAME = libft.a
 
 HEADER = libft.h
 
-FLAG = -c $(C_FILES)
-
 all: $(NAME)
 
-$(NAME): build
-
-build:
-	gcc -c *.c
-	ar -rc $(NAME).a *.o
+$(NAME): $(wildcard *.c)
+	gcc -c $^
+	ar -rc libft.a *.o
 
 clean:
-	/bin/rm -rf *.o
+	/bin/rm -f *.o
 
 fclean: clean
-	/bin/rm -rf $(NAME).a
+	/bin/rm -f libft.a
 
 re: fclean all
 
-.PHONY: re fclean clean all build
+.PHONY: re fclean clean all

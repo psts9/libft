@@ -6,7 +6,7 @@
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 17:14:03 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/11 19:14:00 by pthorell         ###   ########.fr       */
+/*   Updated: 2018/07/12 00:01:25 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	t_list *tmp;
+	t_list *curr;
+	t_list *next;
 
-	while (*alst)
+	curr = *alst;
+	while (curr)
 	{
-		tmp = *alst;
-		*alst = (*alst)->next;
-		ft_lstdelone(alst, del);
-		free(*alst);
+		next = curr->next;
+		ft_lstdelone(&curr, del);
+		curr = next;
 	}
+	*alst = NULL;
 }
