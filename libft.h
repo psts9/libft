@@ -6,7 +6,7 @@
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 12:25:35 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/11 15:59:31 by pthorell         ###   ########.fr       */
+/*   Updated: 2018/07/11 19:09:29 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define LIBFT_H
 
 # include "string.h"
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
 
 void	*ft_memset(void *b, int c, size_t len);
 void	*ft_bzero(void *s, size_t n);
@@ -67,5 +74,8 @@ void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
+t_list	*ft_lstnew(void const *content, size_t content_size);
+void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void	ft_lstdel(t_list **alst, void (*del)(void*, size_t));
 
 #endif
