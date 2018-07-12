@@ -6,11 +6,10 @@
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 15:50:58 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/11 15:06:59 by pthorell         ###   ########.fr       */
+/*   Updated: 2018/07/12 00:28:00 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 static int	numlen(int n)
