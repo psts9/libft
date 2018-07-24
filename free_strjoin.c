@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strjoin.c                                          :+:      :+:    :+:   */
+/*   free_strjoin.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pthorell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/09 23:27:49 by pthorell          #+#    #+#             */
-/*   Updated: 2018/07/14 16:41:49 by pthorell         ###   ########.fr       */
+/*   Created: 2018/07/16 18:35:40 by pthorell          #+#    #+#             */
+/*   Updated: 2018/07/16 18:40:32 by pthorell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	free_strjoin(char **str, const char *src)
 {
-	char	*result;
-	int		total_length;
+	char *temp;
 
-	if (!s1 || !s2)
-		return (NULL);
-	total_length = ft_strlen(s1) + ft_strlen(s2);
-	result = ft_strnew(total_length);
-	if (!result)
-		return (NULL);
-	ft_strcpy(result, s1);
-	ft_strcat(result, s2);
-	return (result);
+	temp = *str;
+	*str = ft_strjoin(*str, src);
+	free(temp);
 }
